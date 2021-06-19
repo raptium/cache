@@ -3,10 +3,8 @@ import * as core from "@actions/core";
 import { Outputs, RefKey, State } from "../constants";
 
 export function isGhes(): boolean {
-    const ghUrl = new URL(
-        process.env["GITHUB_SERVER_URL"] || "https://github.com"
-    );
-    return ghUrl.hostname.toUpperCase() !== "GITHUB.COM";
+    // skip GHES check
+    return false;
 }
 
 export function isExactKeyMatch(key: string, cacheKey?: string): boolean {

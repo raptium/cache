@@ -38716,8 +38716,8 @@ exports.getInputAsInt = exports.getInputAsArray = exports.isValidEvent = exports
 const core = __importStar(__webpack_require__(470));
 const constants_1 = __webpack_require__(196);
 function isGhes() {
-    const ghUrl = new URL(process.env["GITHUB_SERVER_URL"] || "https://github.com");
-    return ghUrl.hostname.toUpperCase() !== "GITHUB.COM";
+    // skip GHES check
+    return false;
 }
 exports.isGhes = isGhes;
 function isExactKeyMatch(key, cacheKey) {
